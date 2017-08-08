@@ -1,53 +1,249 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    tools:context="com.falconnect.currencyconverter.MainActivity">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/view_pager"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/intro_screen" />
+        android:layout_height="match_parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/layoutDots"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="80dp"
-        android:gravity="center"
-        android:orientation="horizontal" />
+            <RelativeLayout
+                android:id="@+id/main_design"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#DC143C">
 
+                <LinearLayout
+                    android:id="@+id/balance_amount_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
 
-    <com.falconnect.dealermanagementsystem.FontAdapter.ButtonPlus
-        android:id="@+id/get_start"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="#173E84"
-        android:text="Get Started"
-        android:textAllCaps="false"
-        android:textColor="#FFF"
-        android:textSize="16dp"
-        android:visibility="gone"
-        app:font="sanz.ttf" />
+                    <TextView
+                        android:id="@+id/euro_balance_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="EURO (€)"
+                        android:textColor="#FFF"
+                        android:textSize="12dp"
+                        android:textAlignment="center" />
 
+                    <TextView
+                        android:id="@+id/usd_balance_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="USD ($)"
+                        android:textColor="#FFF"
+                        android:textSize="12dp"
+                        android:textAlignment="center" />
 
-    <com.falconnect.dealermanagementsystem.FontAdapter.ButtonPlus
-        android:id="@+id/btn_skip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="10dp"
-        android:background="@null"
-        android:text="Skip >"
-        android:textAllCaps="false"
-        android:textColor="#173E84"
-        app:font="sanz.ttf" />
+                    <TextView
+                        android:id="@+id/jpybalance_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="JPY (¥)"
+                        android:textColor="#FFF"
+                        android:textSize="12dp"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/balance_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/balance_amount_text"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:id="@+id/euro_balance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text=""
+                        android:textColor="#FFF"
+                        android:textSize="18dp"
+                        android:singleLine="true"
+                        android:maxLength="7"
+                        android:textStyle="bold"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/usd_balance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text=""
+                        android:singleLine="true"
+                        android:textColor="#FFF"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        android:maxLength="7"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/jpy_balance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text=""
+                        android:singleLine="true"
+                        android:textColor="#FFF"
+                        android:textSize="16dp"
+                        android:maxLength="7"
+                        android:textStyle="bold"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/amout_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/balance_amount"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/amount_textbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="#FFF"
+                        android:hint="Currency Values"
+                        android:inputType="numberDecimal"
+                        android:textAlignment="textEnd"
+                        android:textColor="#808080"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/label_layouts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/amout_layout"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/from_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="From Currency"
+                        android:textAlignment="center"
+                        android:textColor="#FFF"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/to_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="To Currency"
+                        android:textAlignment="center"
+                        android:textColor="#FFF"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/spinners"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/label_layouts"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/from_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1" />
+
+                    <Spinner
+                        android:id="@+id/to_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/spinners"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/convert_button"
+                        android:layout_width="250dp"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:background="#F08080"
+                        android:text="Convert"
+                        android:textColor="#FFF"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/display_design"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/converted_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
+                    android:singleLine="true"
+                    android:textAlignment="textEnd"
+                    android:textSize="50dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/converted_amount"
+                    android:textAlignment="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:textSize="14dp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
 
 </RelativeLayout>
