@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_add_contact_leads"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    tools:context="com.falconnect.dealermanagementsystem.AddContactLeadsActivity">
+
+    <RelativeLayout
+        android:id="@+id/header_search_list"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#173E84">
+
+        <ImageView
+            android:id="@+id/leads_details_back"
+            android:layout_width="30dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/back_arrow" />
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Leads Details"
+            android:textColor="#FFF"
+            android:textSize="20dp"
+            app:font="sanz.ttf" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/listsss"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_search_list"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp">
+
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+            android:id="@+id/region"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:text="Select Region"
+            android:textColor="#000"
+            android:textSize="16dp"
+            app:font="sanz.ttf" />
+
+        <View
+            android:id="@+id/view11"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/region"
+            android:background="#C0C0C0" />
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+            android:id="@+id/manufacture_make"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/view11"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:text="Select Manufacture Make"
+            android:textColor="#000"
+            android:textSize="16dp"
+            app:font="sanz.ttf" />
+
+        <View
+            android:id="@+id/view12"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/manufacture_make"
+            android:background="#C0C0C0" />
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+            android:id="@+id/model"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/view12"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:text="Select Model"
+            android:textColor="#000"
+            android:textSize="16dp"
+            app:font="sanz.ttf" />
+
+        <View
+            android:id="@+id/view13"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/model"
+            android:background="#C0C0C0" />
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+            android:id="@+id/price"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/view13"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:text="Select Price Range"
+            android:textColor="#000"
+            android:textSize="16dp"
+            app:font="sanz.ttf" />
+
+        <View
+            android:id="@+id/view14"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/price"
+            android:background="#C0C0C0" />
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+            android:id="@+id/timeline"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/view14"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:text="Select TimeLine"
+            android:textColor="#000"
+            android:textSize="16dp"
+            app:font="sanz.ttf" />
+
+        <View
+            android:id="@+id/view15"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/timeline"
+            android:background="#C0C0C0" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/listsss"
+        android:layout_marginTop="40dp">
+
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.ButtonPlus
+            android:id="@+id/back_leads"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_toRightOf="@+id/save_btn_leads"
+            android:layout_weight="1.0"
+            android:background="#FA2608"
+            android:text="Back"
+            android:textColor="#FFF" />
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.ButtonPlus
+            android:id="@+id/save_btn_leads"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1.0"
+            android:background="#173E84"
+            android:text="Save"
+            android:textColor="#FFF" />
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.ButtonPlus
+            android:id="@+id/bnext_leads"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_toRightOf="@+id/back_leads"
+            android:layout_weight="1.0"
+            android:background="#173E84"
+            android:text="Documents"
+            android:textColor="#FFF" />
+
+    </LinearLayout>
+
+</RelativeLayout>

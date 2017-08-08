@@ -1,0 +1,132 @@
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/header_search_list"
+    android:layout_marginBottom="5dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="5dp"
+    android:orientation="horizontal"
+    app:cardCornerRadius="5dp">
+
+    <RelativeLayout
+        android:id="@+id/category_it"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:selectableItemBackground"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/myposting_carimage1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/carimageplaceholder" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/myposting_carimage1"
+            android:layout_toRightOf="@+id/myposting_carimage1"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/mtposting_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                    android:id="@+id/myposting_name1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="5dp"
+                    android:text="10001"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    app:font="sanz.ttf" />
+
+                <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                    android:id="@+id/myposting_rate_symbol1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/myposting_name1"
+                    android:layout_marginTop="3dp"
+                    android:text="&#x20B9;"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:font="sanz.ttf" />
+
+                <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                    android:id="@+id/myposting_rate1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/myposting_name1"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_toRightOf="@+id/myposting_rate_symbol1"
+                    android:text="4,00,000"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:font="sanz.ttf" />
+
+                <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                    android:id="@+id/mypostion_kms_fuel_year_owner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/myposting_rate_symbol1"
+                    android:layout_marginTop="3dp"
+                    android:text="19322kms"
+                    android:textSize="12dp"
+                    app:font="sanz.ttf" />
+
+            </RelativeLayout>
+            <!--
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="5dp"
+                            android:orientation="vertical">
+
+                            <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                                android:id="@+id/mtposting_active"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="Active"
+                                android:textColor="#C0C0"
+                                android:textSize="12dp"
+                                app:font="sanz.ttf" />
+
+                            <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                                android:id="@+id/myposting_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/mtposting_active"
+                                android:layout_marginTop="5dp"
+                                android:text="05 Dec 2016"
+                                android:textSize="12dp"
+                                app:font="sanz.ttf" />
+
+                        </RelativeLayout>-->
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "516785716527",
+    "firebase_url": "https://geocoding-156711.firebaseio.com",
+    "project_id": "geocoding-156711",
+    "storage_bucket": "geocoding-156711.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:516785716527:android:83f7d606b36ab845",
+        "android_client_info": {
+          "package_name": "com.falconnect.dealermanagementsystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "516785716527-c8rimt3gg5tnio16l5uaav3v2b14ompu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8db-7Xv2Vmax8PMK0cWsKt3H1uuz85bo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

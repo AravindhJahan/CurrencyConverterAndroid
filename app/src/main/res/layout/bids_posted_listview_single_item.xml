@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp">
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+            android:id="@+id/bids_posted_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Johnxxxx"
+            android:textSize="18dp"
+            android:gravity="left|end"
+            app:font="sanz.ttf" />
+
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true">
+
+            <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                android:id="@+id/bids_posted_rupee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\u20B9"
+                android:textSize="18dp"
+                app:font="sanz.ttf" />
+
+            <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                android:id="@+id/bids_posted_rated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/bids_posted_rupee"
+                android:text="9,00,000.00"
+                android:layout_marginLeft="5dp"
+                android:textSize="18dp"
+                app:font="sanz.ttf" />
+
+        </LinearLayout>
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+            android:id="@+id/bids_posted_date"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="30 Nov 2015 00:00:20"
+            android:layout_toRightOf="@+id/linear"
+            app:font="sanz.ttf"
+            android:gravity="right|end"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

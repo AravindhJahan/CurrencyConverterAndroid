@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/upgrade"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="140dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="16dp"
+            android:textColor="#000"
+            android:text="For Assistance, Please Contact our Support" />
+
+        <RelativeLayout
+            android:id="@+id/supportdesk"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="100dp"
+            android:layout_centerHorizontal="true">
+
+            <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="support@dealerplus.in"
+                android:textColor="#173E84"
+                android:textSize="16dp"/>
+
+        </RelativeLayout>
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.ButtonPlus
+            android:id="@+id/close_byplan"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:background="#173E84"
+            android:text="Close"
+            android:textColor="#FFF" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,263 @@
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_new"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/header_search_list"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="5dp"
+    android:orientation="horizontal"
+    app:cardCornerRadius="5dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:id="@+id/category_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/alertid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp">
+
+            <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                android:id="@+id/alert_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/alertTypeId"
+                android:paddingLeft="10dp"
+                android:text="222"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                app:font="sanz.ttf" />
+
+
+            <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                android:id="@+id/alertTypeId"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/alert_id"
+                android:layout_alignBottom="@+id/alert_id"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:text="Alert Id"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                app:font="sanz.ttf" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/alertLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/alertid"
+            android:layout_marginLeft="5dp">
+
+            <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                android:id="@+id/type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/alert"
+                android:paddingLeft="10dp"
+                android:text="Search"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                app:font="sanz.ttf" />
+
+
+            <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                android:id="@+id/alert"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/type"
+                android:layout_alignBottom="@+id/type"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:text="Alert type"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                app:font="sanz.ttf" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/dealerLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/alertLayout"
+            android:layout_marginLeft="5dp">
+
+            <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                android:id="@+id/dealer"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Dealer"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                app:font="sanz.ttf" />
+
+            <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/dealer"
+                android:paddingLeft="10dp"
+                android:text="All"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                app:font="sanz.ttf" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/datelayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dealerLayout"
+            android:layout_marginLeft="5dp">
+
+            <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                android:id="@+id/alertdate"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Alert Date"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                app:font="sanz.ttf" />
+
+            <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/alertdate"
+                android:paddingLeft="10dp"
+                android:text="03 April 2017"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                app:font="sanz.ttf" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/productlayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/datelayout"
+            android:layout_marginLeft="5dp">
+
+            <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                android:id="@+id/producttype"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Product"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                app:font="sanz.ttf" />
+
+            <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                android:id="@+id/product"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/producttype"
+                android:paddingLeft="10dp"
+                android:text="Martui alto 800"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                app:font="sanz.ttf" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/locationlayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/productlayout"
+            android:layout_marginLeft="5dp">
+
+            <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                android:id="@+id/location"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Loaction"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                app:font="sanz.ttf" />
+
+            <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                android:id="@+id/city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/location"
+                android:paddingLeft="10dp"
+                android:text="Chennai"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                app:font="sanz.ttf" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/checkboxlayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/locationlayout">
+
+            <CheckBox
+                android:id="@+id/alertcheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="5dp"
+                android:text="Alert" />
+
+            <CheckBox
+                android:id="@+id/sms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="SMS" />
+
+            <CheckBox
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Email" />
+
+        </RelativeLayout>
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+            android:id="@+id/delete"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:background="#FF0000"
+            android:gravity="center"
+            android:text="Delete"
+            android:textColor="#FFF"
+            android:textSize="14dp"
+            app:font="sanz.ttf" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

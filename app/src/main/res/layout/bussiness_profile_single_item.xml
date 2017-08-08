@@ -1,0 +1,75 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <ImageView
+            android:id="@+id/car_image_bussiness_profile"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/carimageplaceholder"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"/>
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+            android:id="@+id/car_name_bussiness_profile"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@+id/car_image_bussiness_profile"
+            android:textSize="16dp"
+            app:font="sanz.ttf"
+            android:maxLines="1"
+            android:textColor="#173E84"
+            android:layout_marginLeft="10dp"
+            android:text="Fiat Linear Classic - 1.4L Fire Petrol"/>
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+            android:id="@+id/address_bussiness_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chennai - listed Today"
+            android:textSize="14dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginLeft="10dp"
+            app:font="sanz.ttf"
+            android:layout_below="@+id/car_name_bussiness_profile"
+            android:layout_toRightOf="@+id/car_image_bussiness_profile"
+            android:textColor="#000"/>
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+            android:id="@+id/details_bussiness_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10000Km | Petrol | 2001 | First"
+            android:textSize="14dp"
+            android:layout_marginTop="3dp"
+            app:font="sanz.ttf"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/address_bussiness_profile"
+            android:layout_toRightOf="@+id/car_image_bussiness_profile"
+            android:textColor="#000"/>
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+            android:id="@+id/rate_bussiness_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rs: 35700"
+            android:textSize="14dp"
+            android:layout_marginTop="3dp"
+            app:font="sanz.ttf"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/details_bussiness_profile"
+            android:layout_toRightOf="@+id/car_image_bussiness_profile"
+            android:textColor="#000"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

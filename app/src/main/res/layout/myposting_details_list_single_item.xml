@@ -1,0 +1,172 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/totallayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#FFF">
+
+        <RelativeLayout
+            android:id="@+id/total"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:id="@+id/images"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/car_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp"
+                        android:layout_gravity="center"
+                        android:scaleType="center"
+                        android:src="@drawable/carimageplaceholder" />
+
+                    <RelativeLayout
+                        android:id="@+id/grey_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:background="#80000000">
+
+                        <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                            android:id="@+id/car_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:maxLines="1"
+                            android:text="Ferrari - ZR 65 DX"
+                            android:textColor="#FFF"
+                            android:textSize="18dp"
+                            app:font="sanz.ttf" />
+
+                    </RelativeLayout>
+
+                </FrameLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/images"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+
+                    <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                        android:id="@+id/myposting_details_car_token"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Dplejhjksdhfjksdfhg - Free"
+                        android:textColor="#000"
+                        android:textSize="16dp"
+                        app:font="sanz.ttf" />
+
+                    <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                        android:id="@+id/myposting_details_car_rate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/myposting_details_car_token"
+                        android:layout_marginTop="5dp"
+                        android:text="Rs. 977030.00"
+                        android:textColor="#000"
+                        android:textSize="14dp"
+                        app:font="sanz.ttf" />
+
+                    <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                        android:id="@+id/myposting_details_car_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/myposting_details_car_rate"
+                        android:layout_marginTop="5dp"
+                        android:text="7756 km | Petrol | 2001 | 2 oowner"
+                        android:textColor="#000"
+                        android:textSize="12dp"
+                        app:font="sanz.ttf" />
+
+                    <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                        android:id="@+id/myposting_details_car_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/myposting_details_car_details"
+                        android:layout_marginTop="5dp"
+                        android:text="Active"
+                        android:textColor="#173E84"
+                        android:textSize="12dp"
+                        app:font="sanz.ttf" />
+
+                    <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                        android:id="@+id/myposting_details_car_post_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/myposting_details_car_details"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text="2017-02-08"
+                        android:textColor="#000"
+                        android:textSize="12dp"
+                        app:font="sanz.ttf" />
+
+                    <ImageView
+                        android:id="@+id/my_posting_site_image"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/chola" />
+
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/my_posting_site_image">
+
+                        <com.falconnect.dealermanagementsystem.FontAdapter.ButtonPlus
+                        android:id="@+id/my_psting_delete_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="20dp"
+                        android:background="#FA2608"
+                        android:text="Delete"
+                        android:textColor="#FFF"
+                        android:textSize="14dp"
+                        app:font="sanz.ttf" />
+
+                        <com.falconnect.dealermanagementsystem.FontAdapter.ButtonPlus
+                            android:id="@+id/my_psting_repost_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="20dp"
+                            android:background="#173E84"
+                            android:text="Repost"
+                            android:textColor="#FFF"
+                            android:textSize="14dp"
+                            android:visibility="gone"
+                            app:font="sanz.ttf" />
+                    </FrameLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

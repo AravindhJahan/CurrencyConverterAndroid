@@ -1,0 +1,146 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    android:orientation="vertical">
+
+    <!--Header-->
+    <RelativeLayout
+        android:id="@+id/header_search_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="#173E84">
+
+            <ImageView
+                android:id="@+id/edit_bussiness_close"
+                android:layout_width="25dp"
+                android:layout_height="55dp"
+                android:layout_marginLeft="7dp"
+                android:src="@drawable/close" />
+
+            <ImageView
+                android:id="@+id/edit_bussiness_apply_icon"
+                android:layout_width="25dp"
+                android:layout_height="55dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/tick" />
+
+            <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                android:id="@+id/customTextView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="Edit Bussiness Profile"
+                android:textColor="#FFF"
+                android:textSize="18dp"
+                app:font="sanz.ttf" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/textbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp">
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+            android:id="@+id/dealerplus_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dealership Name"
+            android:textColor="#173E84"
+            android:textSize="16dp"
+            app:font="sanz.ttf" />
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.CEditText
+            android:id="@+id/dealerplus_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dealerplus_name"
+            android:hint="Naveen Cars"
+            android:inputType="textPersonName"
+            android:maxLength="30"
+            android:textColor="#000"
+            android:textSize="16dp" />
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+            android:id="@+id/dealer_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dealerplus_edit_text"
+            android:layout_marginTop="5dp"
+            android:text="Dealer Name"
+            android:textColor="#173E84"
+            android:textSize="16dp"
+            app:font="sanz.ttf" />
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.CEditText
+            android:id="@+id/dealer_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dealer_name"
+            android:hint="Naveen Cars"
+            android:inputType="textPersonName"
+            android:maxLength="30"
+            android:textColor="#000"
+            android:textSize="16dp" />
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+            android:id="@+id/dealer_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dealer_edit_text"
+            android:layout_marginTop="5dp"
+            android:text="Dealer Number"
+            android:textColor="#173E84"
+            android:textSize="16dp"
+            app:font="sanz.ttf" />
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.CEditText
+            android:id="@+id/dealer_num_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dealer_number"
+            android:hint="Mobile Number"
+            android:inputType="number"
+            android:maxLength="10"
+            android:textColor="#000"
+            android:textSize="16dp" />
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+            android:id="@+id/dealer_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dealer_num_edit_text"
+            android:layout_marginTop="5dp"
+            android:text="Dealer Email"
+            android:textColor="#173E84"
+            android:textSize="16dp"
+            app:font="sanz.ttf" />
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.CEditText
+            android:id="@+id/dealer_email_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dealer_email"
+            android:hint="naveen@falconnect.in"
+            android:inputType="textEmailAddress"
+            android:textColor="#000"
+            android:textSize="16dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>
+

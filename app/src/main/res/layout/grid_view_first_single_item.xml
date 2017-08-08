@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <RelativeLayout
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="5dp"
+        android:background="#ebebf1"
+        android:layout_marginTop="5dp">
+
+
+    <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+        android:id="@+id/add_fund_dashboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fund Request (13)"
+        android:textColor="#000"
+        android:textSize="16dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        app:font="sanz.ttf" />
+
+    <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+        android:id="@+id/plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:textColor="#173E84"
+        android:textSize="25dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dp"
+        android:textStyle="bold"
+         app:font="sanz.ttf" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,32 @@
+<resources>
+
+    <!-- Declare custom theme attributes that allow changing which styles are
+         used for button bars depending on the API level.
+         ?android:attr/buttonBarStyle is new as of API 11 so this is
+         necessary to support previous API levels. -->
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference" />
+        <attr name="metaButtonBarButtonStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomTextView">
+        <attr name="font" format="string" />
+    </declare-styleable>
+
+
+    <declare-styleable name="MultiSelectSpinner">
+
+        <attr name="choiceDialogTheme" format="reference" />
+        <attr name="titleDividerDrawable" format="reference" />
+        <attr name="titleDividerColor" format="color" />
+
+    </declare-styleable>
+    <!-- style reference -->
+    <declare-styleable name="MultiSelectSpinnerTheme">
+        <attr name="multiSelectSpinnerStyle" format="reference" />
+    </declare-styleable>
+
+    <attr name="segmentedControlButtonStyle" format="reference" />
+    <declare-styleable name="SegmentedControlButton" />
+
+</resources>

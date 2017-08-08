@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF">
+
+
+    <RelativeLayout
+        android:id="@+id/header_search_list"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#173E84">
+
+        <ImageView
+            android:id="@+id/manage_branches_mnav"
+            android:layout_width="30dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/nav_icon" />
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="My Branches"
+            android:textColor="#FFF"
+            android:textSize="20dp"
+            app:font="sanz.ttf" />
+
+    </RelativeLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header_search_list"
+        android:layout_marginBottom="55dp">
+
+        <com.baoyz.swipemenulistview.SwipeMenuListView
+            android:id="@+id/branch_listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:listSelector="#FFF" />
+
+        <RelativeLayout
+            android:id="@+id/result_found"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:visibility="gone">
+
+            <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                android:id="@+id/no_result_found"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="No Records Found"
+                android:textSize="25dp"
+                app:font="sanz.ttf" />
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+
+    <ImageView
+        android:id="@+id/plus_mybranch"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="75dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/fabplus" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/branch_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#173E84"
+        android:scrollbars="none" />
+
+</RelativeLayout>

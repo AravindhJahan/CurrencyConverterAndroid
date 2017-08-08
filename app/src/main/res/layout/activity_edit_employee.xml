@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF">
+
+
+    <RelativeLayout
+        android:id="@+id/header_search_list"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#173E84">
+
+        <ImageView
+            android:id="@+id/editemployee_back"
+            android:layout_width="30dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/back_arrow" />
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Edit Employee"
+            android:textColor="#FFF"
+            android:textSize="20dp"
+            app:font="sanz.ttf" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/profile_image_employee"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/header_search_list"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/default_avatar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_image_employee">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/contact_type_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/address_layout"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <Spinner
+                            android:id="@+id/editemployee_spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone" />
+
+                        <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                            android:id="@+id/edit_emply_type"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:gravity="center_vertical"
+                            android:textSize="16dp"
+                            app:font="sanz.ttf" />
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view7"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/username_layout"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#808080" />
+
+                <LinearLayout
+                    android:id="@+id/contact_desi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/address_layout"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <Spinner
+                            android:id="@+id/employee_desi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                            android:id="@+id/employee_desi_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:gravity="center_vertical"
+                            android:textSize="16dp"
+                            app:font="sanz.ttf" />
+
+                    </FrameLayout>
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view71"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/username_layout"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#808080" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/employee_owner_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal">
+
+                            <com.falconnect.dealermanagementsystem.FontAdapter.CEditText
+                                android:id="@+id/editemployee_owner_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="5dp"
+                                android:background="#fff"
+                                android:fontFamily="sanz.ttf"
+                                android:hint="Employee Name"
+                                android:inputType="textPersonName"
+                                android:maxLength="30"
+                                android:textSize="15dp" />
+
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view12"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_below="@+id/employee_owner_layout"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="5dp"
+                            android:background="#808080" />
+
+                        <LinearLayout
+                            android:id="@+id/employee_phone_number_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/view12"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal">
+
+                            <com.falconnect.dealermanagementsystem.FontAdapter.CEditText
+                                android:id="@+id/editemployee_phone_number"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="5dp"
+                                android:background="#fff"
+                                android:fontFamily="sanz.ttf"
+                                android:hint="Phone Number"
+                                android:inputType="number"
+                                android:maxLength="10"
+                                android:textSize="15dp" />
+
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view14"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_below="@+id/employee_phone_number_layout"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="5dp"
+                            android:background="#808080" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/get_employee_contact"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1.0">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp"
+                            android:src="@drawable/phonebook" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/contact_email_id_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/address_layout"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <com.falconnect.dealermanagementsystem.FontAdapter.CEditText
+                        android:id="@+id/editemployee_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:background="#fff"
+                        android:fontFamily="sanz.ttf"
+                        android:hint="Email ID"
+                        android:inputType="textEmailAddress"
+                        android:textSize="15dp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view15"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/username_layout"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#808080" />
+
+                <LinearLayout
+                    android:id="@+id/editemployee_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/address_layout"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                            <Spinner
+                                android:id="@+id/employee_gender"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                            <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                                android:id="@+id/employee_gender_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:gravity="center_vertical"
+                                android:textSize="16dp"
+                                app:font="sanz.ttf" />
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view76"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/username_layout"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#808080" />
+
+                <!--Button-->
+                <com.falconnect.dealermanagementsystem.FontAdapter.ButtonPlus
+                    android:id="@+id/submit_addemployee"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="70dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/shape_submit"
+                    android:text="SAVE"
+                    android:textAllCaps="false"
+                    android:textColor="#FFF"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:font="sanz.ttf" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/editemployee_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#173E84"
+        android:scrollbars="none" />
+
+</RelativeLayout>

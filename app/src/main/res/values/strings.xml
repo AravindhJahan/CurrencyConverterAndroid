@@ -1,3 +1,149 @@
 <resources>
-    <string name="app_name">CurrencyConverter</string>
+    <string name="app_name">DealerplusStaging</string>
+
+    <string name="hotline_file_provider_authority">com.falconnect.dealermanagementsystem.provider</string>
+
+    <string name="title_activity_main">MainActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">BIDS\nPOSTED</string>
+
+    <string name="title_activity_login">LoginActivity</string>
+
+    <string name="title_activity_register">RegisterActivity</string>
+
+    <string name="title_activity_forgot_password">ForgotPasswordActivity</string>
+    <string name="title_activity_home_screen_dash_board">HomeScreenDashBoardActivity</string>
+
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+
+    <string name="alert_red">alert red</string>
+    <string name="alert_white">alert white</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_dash_board">DashBoardActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="title_activity_search_result">SearchResultActivity</string>
+
+    <string name="title_activity_change_password">ChangePassword</string>
+
+    <string name="title_activity_saved_car">SavedCarActivity</string>
+
+    <string name="title_activity_city">CityActivity</string>
+
+    <string name="title_activity_my_queries">MyQueriesActivity</string>
+
+    <string name="title_activity_bids_posted">BidsPostedActivity</string>
+
+    <string name="title_activity_funding">FundingActivity</string>
+
+    <string name="title_activity_apply_funding">ApplyFundingActivity</string>
+
+    <string name="title_activity_bids_posting">BidsPostingActivity</string>
+
+    <string name="title_activity_funding_view">FundingViewActivity</string>
+
+    <string name="title_activity_sell_dash_board">SellDashBoardActivity</string>
+
+    <string name="title_activity_loan">LoanActivity</string>
+
+    <string name="title_activity_queries_recieved">QueriesRecievedActivity</string>
+
+    <string name="title_activity_loan_view">LoanViewActivity</string>
+
+    <string name="title_activity_auction">AuctionActivity</string>
+
+    <string name="title_activity_my_posting">MyPostingActivity</string>
+
+    <string name="title_activity_manage_dash_board">ManageDashBoardActivity</string>
+
+    <string name="title_activity_my_user">MyUserActivity</string>
+
+    <string name="heading_dismissable_views">Simple Views</string>
+    <string name="heading_dismissable_list_view">ListView</string>
+
+    <string name="title_activity_add_user">AddUserActivity</string>
+
+    <string name="title_activity_my_branches">MyBranchesActivity</string>
+
+    <string name="title_activity_edit_branches">EditBranchesActivity</string>
+
+    <string name="title_activity_add_branches">AddBranchesActivity</string>
+
+    <string name="title_activity_subscription">SubscriptionActivity</string>
+
+    <string name="title_activity_contact">ContactActivity</string>
+
+    <string name="title_activity_add_contact">AddContactActivity</string>
+
+    <string name="title_activity_funding_select_car">FundingSelectCarActivity</string>
+
+    <string name="title_activity_funding_total">FundingTotalActivity</string>
+
+    <string name="title_activity_my_posting_details">MyPostingDetailsActivity</string>
+
+    <string name="title_activity_bussiness_profile">BussinessProfileActivity</string>
+
+    <string name="title_activity_address_locate_map_view">AddressLocateMapViewActivity</string>
+
+    <string name="title_activity_main_dash_board">MainDashBoardActivity</string>
+
+    <string name="title_activity_web_view">WebViewActivity</string>
+
+    <string name="title_activity_edit_user">EditUserActivity</string>
+
+    <string name="title_activity_edit_contact">EditContactActivity</string>
+
+    <string name="title_activity_edit_contacts_new">EditContactsActivityNew</string>
+
+    <string name="title_activity_dash_board_new">DashBoardNewActivity</string>
+
+    <string name="title_activity_edit_bussiness_profile">EditBussinessProfileActivity</string>
+    <string name="title_activity_emi_calculator">EditBussinessProfileActivity</string>
+    <string name="title_activity_location_selection">LocationSelection</string>
+
+    <string name="add_pickup_drop_location">Select Address</string>
+
+    <string name="ok">OK</string>
+
+    <string name="enter_address">Enter Address</string>
+
+    <string name="door_no">Door No</string>
+
+    <string name="title_activity_my_employee">MyEmployeeActivity</string>
+
+    <string name="title_activity_confirmation_funding">ConfirmationFundingActivity</string>
+
+    <string name="title_activity_filter">FilterActivity</string>
+
+    <string name="title_activity_filter_screen">FilterScreen</string>
+
+    <string name="title_activity_filter_screen_detail">FilterScreenDetail</string>
+
+    <string name="title_activity_report_sales">ReportSalesActivity</string>
+
+    <string name="title_activity_report__inventory">Report_Inventory</string>
+
+    <string name="title_activity_staticts__report">Staticts_Report</string>
+
+    <string name="title_activity_main_search_avtivity">MainSearchAvtivity</string>
+
+    <string name="title_activity_buy_plan">BuyPlanActivity</string>
+
+    <string name="title_activity_networks_webview">NetworksWebviewActivity</string>
+
+    <string name="title_activity_dealer_search">DealerSearchActivity</string>
+
+    <string name="title_activity_dealer_bussiness_profile">DealerBussinessProfile</string>
+
+
 </resources>

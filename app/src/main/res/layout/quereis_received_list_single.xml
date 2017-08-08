@@ -1,0 +1,122 @@
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/new_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/header_search_list"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="5dp"
+    android:orientation="horizontal"
+    app:cardCornerRadius="5dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:id="@+id/category_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:selectableItemBackground"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/qreceived_list_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/car_iamge" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toEndOf="@+id/qreceived_list_image"
+            android:layout_toRightOf="@+id/qreceived_list_image"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/names"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                    android:id="@+id/quereies_recieved_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Aravindhxxxxxxxxxxxxxxxx"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:font="sanz.ttf" />
+
+
+
+                <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                    android:id="@+id/queries_recieved_car_name"
+                    android:layout_width="150dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/quereies_recieved_name"
+                    android:layout_marginTop="5dp"
+                    android:text="Hyundai i10"
+                    android:textSize="12dp"
+                    app:font="sanz.ttf" />
+
+                <com.falconnect.dealermanagementsystem.FontAdapter.ButtonPlus
+                    android:id="@+id/listing_id"
+                    android:layout_width="75dp"
+                    android:layout_height="25dp"
+                    android:layout_toRightOf="@+id/queries_recieved_car_name"
+                    android:background="#173E84"
+                    android:textSize="12dp"
+                    android:textColor="#FFF"
+                    app:font="sanz.ttf"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_centerVertical="true"
+                    android:text="Listing"/>
+
+                <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                    android:id="@+id/queries_revieved_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/queries_recieved_car_name"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:maxLines="1"
+                    android:text="Is there 2014 model available with you"
+                    android:textSize="12dp"
+                    app:font="sanz.ttf" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center"
+                android:layout_marginRight="5dp">
+
+                <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                    android:id="@+id/quereies_recieved_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rupee"
+                    android:text="2 Hours ago"
+                    android:textSize="12dp"
+                    app:font="sanz.ttf" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

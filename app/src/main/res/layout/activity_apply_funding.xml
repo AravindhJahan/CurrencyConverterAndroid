@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    android:orientation="vertical">
+
+
+    <!--Header-->
+    <LinearLayout
+        android:id="@+id/header_search_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="#173E84"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/apply_funding_back"
+                android:layout_width="30dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/back_arrow" />
+
+            <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="30dp"
+                android:gravity="center"
+                android:text="Apply Funding"
+                android:textColor="#FFF"
+                android:textSize="18dp"
+                app:font="sanz.ttf" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+        android:id="@+id/dealer_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_search_list"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:text="Dealer Information"
+        android:textColor="#173E84"
+        android:textSize="16dp"
+        app:font="sanz.ttf" />
+
+    <!--Body1-->
+    <android.support.v7.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dealer_info"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp">
+
+            <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                android:id="@+id/name_inventory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Dealerplus Management"
+                android:textColor="#173E84"
+                android:textSize="14dp"
+                app:font="sanz.ttf" />
+
+            <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                android:id="@+id/dealership_inventory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name_inventory"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Dealerplus Management"
+                android:textColor="#000"
+                android:textSize="14dp"
+                app:font="sanz.ttf" />
+
+            <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                android:id="@+id/dealership_mail_inventory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dealership_inventory"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="dealerplus@gmail.com"
+                android:textColor="#000"
+                android:textSize="14dp"
+                app:font="sanz.ttf" />
+
+            <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+                android:id="@+id/dealership_number_inventory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dealership_mail_inventory"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="9999999999"
+                android:textColor="#000"
+                android:textSize="14dp"
+                app:font="sanz.ttf" />
+
+            <ImageView
+                android:id="@+id/apply_funding_ownerimage"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/default_avatar" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+        android:id="@+id/dealer_applying_date_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/card"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:text="Applying Date"
+        android:textColor="#173E84"
+        android:textSize="16dp"
+        app:font="sanz.ttf" />
+
+    <!--Body2-->
+    <android.support.v7.widget.CardView
+        android:id="@+id/card1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/dealer_applying_date_text"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        app:cardCornerRadius="3dp">
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+            android:id="@+id/applying_date"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/dealer_applying_date_text"
+            android:layout_marginLeft="5dp"
+            android:gravity="center_vertical"
+            android:hint="Date"
+            android:textColor="#000"
+            android:textSize="14dp" />
+
+    </android.support.v7.widget.CardView>
+
+    <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+        android:id="@+id/dealer_applying_city_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/card1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:text="Applying City"
+        android:textColor="#173E84"
+        android:textSize="16dp"
+        app:font="sanz.ttf" />
+
+    <!--Body3-->
+    <android.support.v7.widget.CardView
+        android:id="@+id/card2"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/dealer_applying_city_text"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        app:cardCornerRadius="3dp">
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+            android:id="@+id/applying_city"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/dealer_applying_date_text"
+            android:layout_marginLeft="5dp"
+            android:gravity="center_vertical"
+            android:hint="City"
+            android:textColor="#000"
+            android:textSize="14dp" />
+
+    </android.support.v7.widget.CardView>
+
+    <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+        android:id="@+id/dealer_applying_branch_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/card2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:text="Applying Branch"
+        android:textColor="#173E84"
+        android:textSize="16dp"
+        app:font="sanz.ttf" />
+
+    <!--Body4-->
+    <android.support.v7.widget.CardView
+        android:id="@+id/card3"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/dealer_applying_branch_text"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        app:cardCornerRadius="3dp">
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+            android:id="@+id/applying_branch"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/dealer_applying_date_text"
+            android:layout_marginLeft="5dp"
+            android:gravity="center_vertical"
+            android:hint="Branch"
+            android:textColor="#000"
+            android:textSize="14dp" />
+
+    </android.support.v7.widget.CardView>
+
+    <com.falconnect.dealermanagementsystem.FontAdapter.ButtonPlus
+        android:id="@+id/next_inventory"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/card3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="#FA2608"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:textColor="#FFF"
+        android:textSize="18dp"
+        app:font="sanz.ttf" />
+
+    <!--Footer-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/my_recycler_apply_funding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#173E84"
+        android:scrollbars="none" />
+
+</RelativeLayout>

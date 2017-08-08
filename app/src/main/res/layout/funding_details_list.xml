@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_weight="1.0">
+
+    <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+        android:id="@+id/tokent_id_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1.0"
+        android:text="Token"
+        android:textColor="#000"
+        android:textSize="16dp"
+        app:font="sanz.ttf" />
+
+
+    <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+        android:id="@+id/tokent_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tokent_id_text"
+        android:layout_weight="1.0"
+        android:text="73723424023424234"
+        android:textColor="#000"
+        android:textSize="16dp"
+        app:font="sanz.ttf" />
+
+
+</LinearLayout>

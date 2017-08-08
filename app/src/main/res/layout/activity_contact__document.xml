@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_contact__document"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    tools:context="com.falconnect.dealermanagementsystem.Contact_Document">
+
+    <RelativeLayout
+        android:id="@+id/header_search_list"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#173E84">
+
+        <ImageView
+            android:id="@+id/editemployee_back"
+            android:layout_width="30dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/back_arrow" />
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Document"
+            android:textColor="#FFF"
+            android:textSize="20dp"
+            app:font="sanz.ttf" />
+
+    </RelativeLayout>
+
+
+    <FrameLayout
+        android:id="@+id/frames"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_search_list"
+        android:layout_marginTop="20dp">
+
+
+        <Spinner
+            android:id="@+id/employee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+            android:id="@+id/select_id"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:textSize="16dp"
+            app:font="sanz.ttf" />
+
+    </FrameLayout>
+
+    <View
+        android:id="@+id/view1231"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/frames"
+        android:background="#000" />
+
+    <LinearLayout
+        android:id="@+id/employee_owner_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view1231"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+
+        <com.falconnect.dealermanagementsystem.FontAdapter.CEditText
+            android:id="@+id/Id_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:background="#fff"
+            android:fontFamily="sanz.ttf"
+            android:hint="Enter the ID"
+            android:inputType="textPersonName"
+            android:maxLength="30"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view12"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/employee_owner_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="#808080" />
+
+    <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+        android:id="@+id/date_Values"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/view12"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:hint="Date"
+        android:textColor="#000"
+        android:textSize="14dp" />
+
+    <View
+        android:id="@+id/view14"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_below="@+id/date_Values"
+        android:layout_marginTop="5dp"
+        android:background="#808080" />
+
+
+    <com.falconnect.dealermanagementsystem.FontAdapter.CustomTextView
+        android:id="@+id/uploadButton"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Select ID proof to upload "
+        android:textColor="@color/black"
+        android:layout_below="@+id/view14"/>
+
+    <View
+        android:id="@+id/viewsa"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/uploadButton"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="#808080" />
+
+    <com.falconnect.dealermanagementsystem.FontAdapter.ButtonPlus
+        android:id="@+id/save_documents"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viewsa"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_submit"
+        android:text="Save"
+        android:textColor="#FFF"
+        android:textSize="16dp"
+        app:font="sanz.ttf" />
+
+
+</RelativeLayout>
