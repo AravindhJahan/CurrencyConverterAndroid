@@ -1,2 +1,0 @@
-# CurrencyConverterAndroid
-Currency Converter Android
