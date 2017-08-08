@@ -213,7 +213,6 @@ public class MainActivity extends AppCompatActivity {
 
         sessionManager = new SessionManager(MainActivity.this);
 
-
     }
 
     public class call_api_function extends AsyncTask<Void, Void, Void> {
@@ -228,14 +227,12 @@ public class MainActivity extends AppCompatActivity {
         protected Void doInBackground(Void... arg0) {
 
             ServiceHandler sh = new ServiceHandler();
-
+            //URL
             String new_URL = URL + get_amount + "-" + get_fromString + "/" + get_toString + "/latest";
-
             Log.e("url", new_URL);
-
+            //GET Method
             String json = sh.makeServiceCall(new_URL, ServiceHandler.GET);
             if (json != null) {
-
                 JSONObject obj = null;
                 try {
                     obj = new JSONObject(json);
@@ -243,11 +240,9 @@ public class MainActivity extends AppCompatActivity {
                         get_amounts = obj.getString("amount");
                         currency = obj.getString("currency");
                     }
-
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
             } else {
                 runOnUiThread(new Runnable() {
                     @Override
@@ -278,440 +273,446 @@ public class MainActivity extends AppCompatActivity {
             }
 
             if (i < 6) {
-                // From - EUR && To - USD
-                if (get_fromString.equals("EUR") && get_toString.equals("USD")) {
-                    user = sessionManager.getAmountDetails();
-                    //EURO Value 0
-                    if (user.get("euro").equals("0.0")) {
-                        final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
-                                .setTitle("Error")
-                                .setMessage("Value is 0")
-                                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface arg0, int arg1) {
-
-                                    }
-                                })
-                                .show();
-                    }
-                    // Euro value greater than textbox value
-                    else if (Double.valueOf(user.get("euro")) < Double.valueOf(get_amount)) {
-                        final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
-                                .setTitle("Error")
-                                .setMessage("Entered values is greater than EURO Value")
-                                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface arg0, int arg1) {
-
-                                    }
-                                })
-                                .show();
-                    }
-                    // calculation
-                    else {
-                        user = sessionManager.getAmountDetails();
-
-                        double euro_bal = Double.valueOf(user.get("euro").toString()) - Integer.parseInt(get_amount);
-                        double usd_bal = Double.valueOf(user.get("usd").toString()) + Double.valueOf(get_amounts);
-
-                        sessionManager.createAmountDetails(String.valueOf(euro_bal), String.valueOf(usd_bal), user.get("jpy"));
-                    }
-                }
-                // From - EUR && To - JPY
-                else if (get_fromString.equals("EUR") && get_toString.equals("JPY")) {
-                    //EURO Value 0
-                    if (user.get("euro").equals("0.0")) {
-                        final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
-                                .setTitle("Error")
-                                .setMessage("Value is 0")
-                                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface arg0, int arg1) {
-
-                                    }
-                                })
-                                .show();
-                    }
-                    //Greater value
-                    else if (Double.valueOf(user.get("euro")) < Double.valueOf(get_amount)) {
-                        final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
-                                .setTitle("Error")
-                                .setMessage("Entered values is greater than EURO Value")
-                                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface arg0, int arg1) {
-
-                                    }
-                                })
-                                .show();
-                    }
-                    // calculation
-                    else {
-                        user = sessionManager.getAmountDetails();
-
-                        double euro_bal = Double.valueOf(user.get("euro").toString()) - Integer.parseInt(get_amount);
-                        double jpy_bal = Double.valueOf(user.get("jpy").toString()) + Double.valueOf(get_amounts);
-
-                        sessionManager.createAmountDetails(String.valueOf(euro_bal), user.get("usd"), String.valueOf(jpy_bal));
-                    }
-                } else if (get_fromString.equals("USD") && get_toString.equals("EUR")) {
-                    //EURO Value 0
-                    if (user.get("usd").equals("0.0")) {
-                        final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
-                                .setTitle("Error")
-                                .setMessage("Value is 0")
-                                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface arg0, int arg1) {
-
-                                    }
-                                })
-                                .show();
-                    }
-                    //Greater value
-                    else if (Double.valueOf(user.get("usd")) < Double.valueOf(get_amount)) {
-                        final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
-                                .setTitle("Error")
-                                .setMessage("Entered values is greater than USD Value")
-                                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface arg0, int arg1) {
-
-                                    }
-                                })
-                                .show();
-                    } else {
-                        user = sessionManager.getAmountDetails();
-
-                        double usd_bal = Double.valueOf(user.get("usd").toString()) - Integer.parseInt(get_amount);
-                        double add_euro_Val = Double.valueOf(user.get("euro").toString()) + Double.valueOf(get_amounts);
-
-                        sessionManager.createAmountDetails(String.valueOf(add_euro_Val), String.valueOf(usd_bal), user.get("jpy").toString());
-                    }
-                } else if (get_fromString.equals("USD") && get_toString.equals("JPY")) {
-                    //EURO Value 0
-                    if (user.get("usd").equals("0.0")) {
-                        final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
-                                .setTitle("Error")
-                                .setMessage("Value is 0")
-                                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface arg0, int arg1) {
-
-                                    }
-                                })
-                                .show();
-                    }
-                    //Greater value
-                    else if (Double.valueOf(user.get("usd")) < Double.valueOf(get_amount)) {
-                        final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
-                                .setTitle("Error")
-                                .setMessage("Entered values is greater than USD Value")
-                                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface arg0, int arg1) {
-
-                                    }
-                                })
-                                .show();
-                    } else {
-                        user = sessionManager.getAmountDetails();
-
-                        double usd_bal = Double.valueOf(user.get("usd").toString()) - Integer.parseInt(get_amount);
-                        double add_euro_Val = Double.valueOf(user.get("jpy").toString()) + Double.valueOf(get_amounts);
-
-                        sessionManager.createAmountDetails(user.get("euro").toString(), String.valueOf(usd_bal), String.valueOf(add_euro_Val));
-                    }
-                } else if (get_fromString.equals("JPY") && get_toString.equals("EUR")) {
-                    //EURO Value 0
-                    if (user.get("jpy").equals("0.0")) {
-                        final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
-                                .setTitle("Error")
-                                .setMessage("Value is 0")
-                                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface arg0, int arg1) {
-
-                                    }
-                                })
-                                .show();
-                    }
-                    //Greater value
-                    else if (Double.valueOf(user.get("jpy")) < Double.valueOf(get_amount)) {
-                        final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
-                                .setTitle("Error")
-                                .setMessage("Entered values is greater than JPY Value")
-                                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface arg0, int arg1) {
-
-                                    }
-                                })
-                                .show();
-                    } else {
-                        user = sessionManager.getAmountDetails();
-
-                        double usd_bal = Double.valueOf(user.get("jpy").toString()) - Integer.parseInt(get_amount);
-                        double add_euro_Val = Double.valueOf(user.get("euro").toString()) + Double.valueOf(get_amounts);
-
-                        sessionManager.createAmountDetails(String.valueOf(add_euro_Val), user.get("usd").toString(), String.valueOf(usd_bal));
-
-                    }
-                } else if (get_fromString.equals("JPY") && get_toString.equals("USD")) {
-                    //EURO Value 0
-                    if (user.get("jpy").equals("0.0")) {
-                        final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
-                                .setTitle("Error")
-                                .setMessage("Value is 0")
-                                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface arg0, int arg1) {
-
-                                    }
-                                })
-                                .show();
-                    }
-                    //Greater value
-                    else if (Double.valueOf(user.get("jpy")) < Double.valueOf(get_amount)) {
-                        final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
-                                .setTitle("Error")
-                                .setMessage("Entered values is greater than JPY Value")
-                                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface arg0, int arg1) {
-
-                                    }
-                                })
-                                .show();
-                    } else {
-                        user = sessionManager.getAmountDetails();
-
-                        double usd_bal = Double.valueOf(user.get("jpy").toString()) - Integer.parseInt(get_amount);
-                        double add_euro_Val = Double.valueOf(user.get("usd").toString()) + Double.valueOf(get_amounts);
-
-                        sessionManager.createAmountDetails(user.get("euro").toString(), String.valueOf(add_euro_Val), String.valueOf(usd_bal));
-                    }
-                }
-
-                InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+                if_condition();
             } else {
-                if (get_fromString.equals("EUR") && get_toString.equals("USD")) {
-                    //EURO Value 0
-                    if (user.get("euro").equals("0.0")) {
-                        final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
-                                .setTitle("Error")
-                                .setMessage("Value is 0")
-                                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface arg0, int arg1) {
-
-                                    }
-                                })
-                                .show();
-                    }
-                    //Greater value
-                    else if (Double.valueOf(user.get("euro")) < Double.valueOf(get_amount)) {
-                        final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
-                                .setTitle("Error")
-                                .setMessage("Entered values is greater than EURO Value")
-                                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface arg0, int arg1) {
-
-                                    }
-                                })
-                                .show();
-                    } else {
-                        user = sessionManager.getAmountDetails();
-
-                        //percentage
-                        double percentage = Double.valueOf(user.get("euro")) * 0.70;
-                        double final_percentage = percentage / 100;
-
-                        double euro_bal = Double.valueOf(user.get("euro").toString()) - Integer.parseInt(get_amount) - final_percentage;
-                        double usd_bal = Double.valueOf(user.get("usd").toString()) + Double.valueOf(get_amounts);
-
-                        sessionManager.createAmountDetails(String.valueOf(euro_bal), String.valueOf(usd_bal), user.get("jpy"));
-                    }
-
-                } else if (get_fromString.equals("EUR") && get_toString.equals("JPY")) {
-                    //EURO Value 0
-                    if (user.get("euro").equals("0.0")) {
-                        final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
-                                .setTitle("Error")
-                                .setMessage("Value is 0")
-                                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface arg0, int arg1) {
-
-                                    }
-                                })
-                                .show();
-                    }
-                    //Greater value
-                    else if (Double.valueOf(user.get("euro")) < Double.valueOf(get_amount)) {
-                        final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
-                                .setTitle("Error")
-                                .setMessage("Entered values is greater than EURO Value")
-                                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface arg0, int arg1) {
-
-                                    }
-                                })
-                                .show();
-                    } else {
-                        user = sessionManager.getAmountDetails();
-                        //percentage
-                        double percentage = Double.valueOf(user.get("euro")) * 0.70;
-                        double final_percentage = percentage / 100;
-
-                        double euro_bal = Double.valueOf(user.get("euro").toString()) - Integer.parseInt(get_amount) - final_percentage;
-                        double jpy_bal = Double.valueOf(user.get("jpy").toString()) + Double.valueOf(get_amounts);
-
-                        sessionManager.createAmountDetails(String.valueOf(euro_bal), user.get("usd"), String.valueOf(jpy_bal));
-                    }
-                } else if (get_fromString.equals("USD") && get_toString.equals("EUR")) {
-                    //USD Value 0
-                    if (user.get("usd").equals("0.0")) {
-                        final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
-                                .setTitle("Error")
-                                .setMessage("Value is 0")
-                                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface arg0, int arg1) {
-
-                                    }
-                                })
-                                .show();
-                    }
-                    //Greater value
-                    else if (Double.valueOf(user.get("usd")) < Double.valueOf(get_amount)) {
-                        final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
-                                .setTitle("Error")
-                                .setMessage("Entered values is greater than USD Value")
-                                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface arg0, int arg1) {
-
-                                    }
-                                })
-                                .show();
-                    } else {
-                        user = sessionManager.getAmountDetails();
-                        //percentage
-                        double percentage = Double.valueOf(user.get("usd")) * 0.70;
-                        double final_percentage = percentage / 100;
-
-                        double usd_bal = Double.valueOf(user.get("usd").toString()) - Integer.parseInt(get_amount) - final_percentage;
-                        double add_euro_Val = Double.valueOf(user.get("euro").toString()) + Double.valueOf(get_amounts);
-
-                        sessionManager.createAmountDetails(String.valueOf(add_euro_Val), String.valueOf(usd_bal), user.get("jpy").toString());
-                    }
-                } else if (get_fromString.equals("USD") && get_toString.equals("JPY")) {
-                    //USD Value 0
-                    if (user.get("usd").equals("0.0")) {
-                        final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
-                                .setTitle("Error")
-                                .setMessage("Value is 0")
-                                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface arg0, int arg1) {
-
-                                    }
-                                })
-                                .show();
-                    }
-                    //Greater value
-                    else if (Double.valueOf(user.get("usd")) < Double.valueOf(get_amount)) {
-                        final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
-                                .setTitle("Error")
-                                .setMessage("Entered values is greater than USD Value")
-                                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface arg0, int arg1) {
-
-                                    }
-                                })
-                                .show();
-
-                    } else {
-                        user = sessionManager.getAmountDetails();
-                        //percentage
-                        double percentage = Double.valueOf(user.get("usd")) * 0.70;
-                        double final_percentage = percentage / 100;
-
-                        double usd_bal = Double.valueOf(user.get("usd").toString()) - Integer.parseInt(get_amount) - final_percentage;
-                        double add_euro_Val = Double.valueOf(user.get("jpy").toString()) + Double.valueOf(get_amounts);
-
-                        sessionManager.createAmountDetails(user.get("euro").toString(), String.valueOf(usd_bal), String.valueOf(add_euro_Val));
-                    }
-                } else if (get_fromString.equals("JPY") && get_toString.equals("EUR")) {
-                    //JPY Value 0
-                    if (user.get("jpy").equals("0.0")) {
-                        final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
-                                .setTitle("Error")
-                                .setMessage("Value is 0")
-                                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface arg0, int arg1) {
-
-                                    }
-                                })
-                                .show();
-                    }
-                    //Greater value
-                    else if (Double.valueOf(user.get("jpy")) < Double.valueOf(get_amount)) {
-                        final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
-                                .setTitle("Error")
-                                .setMessage("Entered values is greater than JPY Value")
-                                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface arg0, int arg1) {
-
-                                    }
-                                })
-                                .show();
-
-                    } else {
-                        user = sessionManager.getAmountDetails();
-                        //percentage
-                        double percentage = Double.valueOf(user.get("jpy")) * 0.70;
-                        double final_percentage = percentage / 100;
-
-                        double usd_bal = Double.valueOf(user.get("jpy").toString()) - Integer.parseInt(get_amount) - final_percentage;
-                        double add_euro_Val = Double.valueOf(user.get("euro").toString()) + Double.valueOf(get_amounts);
-
-                        sessionManager.createAmountDetails(String.valueOf(add_euro_Val), user.get("usd").toString(), String.valueOf(usd_bal));
-                    }
-                } else if (get_fromString.equals("JPY") && get_toString.equals("USD")) {
-                    //JPY Value 0
-                    if (user.get("jpy").equals("0.0")) {
-                        final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
-                                .setTitle("Error")
-                                .setMessage("Value is 0")
-                                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface arg0, int arg1) {
-
-                                    }
-                                })
-                                .show();
-                    }
-                    //Greater value
-                    else if (Double.valueOf(user.get("jpy")) < Double.valueOf(get_amount)) {
-                        final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
-                                .setTitle("Error")
-                                .setMessage("Entered values is greater than JPY Value")
-                                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface arg0, int arg1) {
-
-                                    }
-                                })
-                                .show();
-
-                    } else {
-                        user = sessionManager.getAmountDetails();
-                        //percentage
-                        double percentage = Double.valueOf(user.get("jpy")) * 0.70;
-                        double final_percentage = percentage / 100;
-
-                        double usd_bal = Double.valueOf(user.get("jpy").toString()) - Integer.parseInt(get_amount) - final_percentage;
-                        double add_euro_Val = Double.valueOf(user.get("usd").toString()) + Double.valueOf(get_amounts);
-
-                        sessionManager.createAmountDetails(user.get("euro").toString(), String.valueOf(add_euro_Val), String.valueOf(usd_bal));
-                    }
-                }
-
-                InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
-
+                else_condition();
             }
-
             user = sessionManager.getAmountDetails();
 
             euro_balance.setText(user.get("euro"));
             usd_balance.setText(user.get("usd"));
             jpy_balance.setText(user.get("jpy"));
-
         }
     }
+
+    public void if_condition(){
+        // From - EUR && To - USD
+        if (get_fromString.equals("EUR") && get_toString.equals("USD")) {
+            user = sessionManager.getAmountDetails();
+            //EURO Value 0
+            if (user.get("euro").equals("0.0")) {
+                final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Error")
+                        .setMessage("Value is 0")
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface arg0, int arg1) {
+
+                            }
+                        })
+                        .show();
+            }
+            // Euro value greater than textbox value
+            else if (Double.valueOf(user.get("euro")) < Double.valueOf(get_amount)) {
+                final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Error")
+                        .setMessage("Entered values is greater than EURO Value")
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface arg0, int arg1) {
+
+                            }
+                        })
+                        .show();
+            }
+            // calculation
+            else {
+                user = sessionManager.getAmountDetails();
+
+                double euro_bal = Double.valueOf(user.get("euro").toString()) - Integer.parseInt(get_amount);
+                double usd_bal = Double.valueOf(user.get("usd").toString()) + Double.valueOf(get_amounts);
+
+                sessionManager.createAmountDetails(String.valueOf(euro_bal), String.valueOf(usd_bal), user.get("jpy"));
+            }
+        }
+        // From - EUR && To - JPY
+        else if (get_fromString.equals("EUR") && get_toString.equals("JPY")) {
+            //EURO Value 0
+            if (user.get("euro").equals("0.0")) {
+                final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Error")
+                        .setMessage("Value is 0")
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface arg0, int arg1) {
+
+                            }
+                        })
+                        .show();
+            }
+            //Greater value
+            else if (Double.valueOf(user.get("euro")) < Double.valueOf(get_amount)) {
+                final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Error")
+                        .setMessage("Entered values is greater than EURO Value")
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface arg0, int arg1) {
+
+                            }
+                        })
+                        .show();
+            }
+            // calculation
+            else {
+                user = sessionManager.getAmountDetails();
+
+                double euro_bal = Double.valueOf(user.get("euro").toString()) - Integer.parseInt(get_amount);
+                double jpy_bal = Double.valueOf(user.get("jpy").toString()) + Double.valueOf(get_amounts);
+
+                sessionManager.createAmountDetails(String.valueOf(euro_bal), user.get("usd"), String.valueOf(jpy_bal));
+            }
+        } else if (get_fromString.equals("USD") && get_toString.equals("EUR")) {
+            //EURO Value 0
+            if (user.get("usd").equals("0.0")) {
+                final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Error")
+                        .setMessage("Value is 0")
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface arg0, int arg1) {
+
+                            }
+                        })
+                        .show();
+            }
+            //Greater value
+            else if (Double.valueOf(user.get("usd")) < Double.valueOf(get_amount)) {
+                final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Error")
+                        .setMessage("Entered values is greater than USD Value")
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface arg0, int arg1) {
+
+                            }
+                        })
+                        .show();
+            } else {
+                user = sessionManager.getAmountDetails();
+
+                double usd_bal = Double.valueOf(user.get("usd").toString()) - Integer.parseInt(get_amount);
+                double add_euro_Val = Double.valueOf(user.get("euro").toString()) + Double.valueOf(get_amounts);
+
+                sessionManager.createAmountDetails(String.valueOf(add_euro_Val), String.valueOf(usd_bal), user.get("jpy").toString());
+            }
+        } else if (get_fromString.equals("USD") && get_toString.equals("JPY")) {
+            //EURO Value 0
+            if (user.get("usd").equals("0.0")) {
+                final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Error")
+                        .setMessage("Value is 0")
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface arg0, int arg1) {
+
+                            }
+                        })
+                        .show();
+            }
+            //Greater value
+            else if (Double.valueOf(user.get("usd")) < Double.valueOf(get_amount)) {
+                final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Error")
+                        .setMessage("Entered values is greater than USD Value")
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface arg0, int arg1) {
+
+                            }
+                        })
+                        .show();
+            } else {
+                user = sessionManager.getAmountDetails();
+
+                double usd_bal = Double.valueOf(user.get("usd").toString()) - Integer.parseInt(get_amount);
+                double add_euro_Val = Double.valueOf(user.get("jpy").toString()) + Double.valueOf(get_amounts);
+
+                sessionManager.createAmountDetails(user.get("euro").toString(), String.valueOf(usd_bal), String.valueOf(add_euro_Val));
+            }
+        } else if (get_fromString.equals("JPY") && get_toString.equals("EUR")) {
+            //EURO Value 0
+            if (user.get("jpy").equals("0.0")) {
+                final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Error")
+                        .setMessage("Value is 0")
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface arg0, int arg1) {
+
+                            }
+                        })
+                        .show();
+            }
+            //Greater value
+            else if (Double.valueOf(user.get("jpy")) < Double.valueOf(get_amount)) {
+                final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Error")
+                        .setMessage("Entered values is greater than JPY Value")
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface arg0, int arg1) {
+
+                            }
+                        })
+                        .show();
+            } else {
+                user = sessionManager.getAmountDetails();
+
+                double usd_bal = Double.valueOf(user.get("jpy").toString()) - Integer.parseInt(get_amount);
+                double add_euro_Val = Double.valueOf(user.get("euro").toString()) + Double.valueOf(get_amounts);
+
+                sessionManager.createAmountDetails(String.valueOf(add_euro_Val), user.get("usd").toString(), String.valueOf(usd_bal));
+
+            }
+        } else if (get_fromString.equals("JPY") && get_toString.equals("USD")) {
+            //EURO Value 0
+            if (user.get("jpy").equals("0.0")) {
+                final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Error")
+                        .setMessage("Value is 0")
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface arg0, int arg1) {
+
+                            }
+                        })
+                        .show();
+            }
+            //Greater value
+            else if (Double.valueOf(user.get("jpy")) < Double.valueOf(get_amount)) {
+                final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Error")
+                        .setMessage("Entered values is greater than JPY Value")
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface arg0, int arg1) {
+
+                            }
+                        })
+                        .show();
+            } else {
+                user = sessionManager.getAmountDetails();
+
+                double usd_bal = Double.valueOf(user.get("jpy").toString()) - Integer.parseInt(get_amount);
+                double add_euro_Val = Double.valueOf(user.get("usd").toString()) + Double.valueOf(get_amounts);
+
+                sessionManager.createAmountDetails(user.get("euro").toString(), String.valueOf(add_euro_Val), String.valueOf(usd_bal));
+            }
+        }
+
+        InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+    }
+
+    public void else_condition(){
+        if (get_fromString.equals("EUR") && get_toString.equals("USD")) {
+            //EURO Value 0
+            if (user.get("euro").equals("0.0")) {
+                final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Error")
+                        .setMessage("Value is 0")
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface arg0, int arg1) {
+
+                            }
+                        })
+                        .show();
+            }
+            //Greater value
+            else if (Double.valueOf(user.get("euro")) < Double.valueOf(get_amount)) {
+                final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Error")
+                        .setMessage("Entered values is greater than EURO Value")
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface arg0, int arg1) {
+
+                            }
+                        })
+                        .show();
+            } else {
+                user = sessionManager.getAmountDetails();
+
+                //percentage
+                double percentage = Double.valueOf(user.get("euro")) * 0.70;
+                double final_percentage = percentage / 100;
+
+                double euro_bal = Double.valueOf(user.get("euro").toString()) - Integer.parseInt(get_amount) - final_percentage;
+                double usd_bal = Double.valueOf(user.get("usd").toString()) + Double.valueOf(get_amounts);
+
+                sessionManager.createAmountDetails(String.valueOf(euro_bal), String.valueOf(usd_bal), user.get("jpy"));
+            }
+
+        } else if (get_fromString.equals("EUR") && get_toString.equals("JPY")) {
+            //EURO Value 0
+            if (user.get("euro").equals("0.0")) {
+                final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Error")
+                        .setMessage("Value is 0")
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface arg0, int arg1) {
+
+                            }
+                        })
+                        .show();
+            }
+            //Greater value
+            else if (Double.valueOf(user.get("euro")) < Double.valueOf(get_amount)) {
+                final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Error")
+                        .setMessage("Entered values is greater than EURO Value")
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface arg0, int arg1) {
+
+                            }
+                        })
+                        .show();
+            } else {
+                user = sessionManager.getAmountDetails();
+                //percentage
+                double percentage = Double.valueOf(user.get("euro")) * 0.70;
+                double final_percentage = percentage / 100;
+
+                double euro_bal = Double.valueOf(user.get("euro").toString()) - Integer.parseInt(get_amount) - final_percentage;
+                double jpy_bal = Double.valueOf(user.get("jpy").toString()) + Double.valueOf(get_amounts);
+
+                sessionManager.createAmountDetails(String.valueOf(euro_bal), user.get("usd"), String.valueOf(jpy_bal));
+            }
+        } else if (get_fromString.equals("USD") && get_toString.equals("EUR")) {
+            //USD Value 0
+            if (user.get("usd").equals("0.0")) {
+                final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Error")
+                        .setMessage("Value is 0")
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface arg0, int arg1) {
+
+                            }
+                        })
+                        .show();
+            }
+            //Greater value
+            else if (Double.valueOf(user.get("usd")) < Double.valueOf(get_amount)) {
+                final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Error")
+                        .setMessage("Entered values is greater than USD Value")
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface arg0, int arg1) {
+
+                            }
+                        })
+                        .show();
+            } else {
+                user = sessionManager.getAmountDetails();
+                //percentage
+                double percentage = Double.valueOf(user.get("usd")) * 0.70;
+                double final_percentage = percentage / 100;
+
+                double usd_bal = Double.valueOf(user.get("usd").toString()) - Integer.parseInt(get_amount) - final_percentage;
+                double add_euro_Val = Double.valueOf(user.get("euro").toString()) + Double.valueOf(get_amounts);
+
+                sessionManager.createAmountDetails(String.valueOf(add_euro_Val), String.valueOf(usd_bal), user.get("jpy").toString());
+            }
+        } else if (get_fromString.equals("USD") && get_toString.equals("JPY")) {
+            //USD Value 0
+            if (user.get("usd").equals("0.0")) {
+                final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Error")
+                        .setMessage("Value is 0")
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface arg0, int arg1) {
+
+                            }
+                        })
+                        .show();
+            }
+            //Greater value
+            else if (Double.valueOf(user.get("usd")) < Double.valueOf(get_amount)) {
+                final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Error")
+                        .setMessage("Entered values is greater than USD Value")
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface arg0, int arg1) {
+
+                            }
+                        })
+                        .show();
+
+            } else {
+                user = sessionManager.getAmountDetails();
+                //percentage
+                double percentage = Double.valueOf(user.get("usd")) * 0.70;
+                double final_percentage = percentage / 100;
+
+                double usd_bal = Double.valueOf(user.get("usd").toString()) - Integer.parseInt(get_amount) - final_percentage;
+                double add_euro_Val = Double.valueOf(user.get("jpy").toString()) + Double.valueOf(get_amounts);
+
+                sessionManager.createAmountDetails(user.get("euro").toString(), String.valueOf(usd_bal), String.valueOf(add_euro_Val));
+            }
+        } else if (get_fromString.equals("JPY") && get_toString.equals("EUR")) {
+            //JPY Value 0
+            if (user.get("jpy").equals("0.0")) {
+                final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Error")
+                        .setMessage("Value is 0")
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface arg0, int arg1) {
+
+                            }
+                        })
+                        .show();
+            }
+            //Greater value
+            else if (Double.valueOf(user.get("jpy")) < Double.valueOf(get_amount)) {
+                final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Error")
+                        .setMessage("Entered values is greater than JPY Value")
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface arg0, int arg1) {
+
+                            }
+                        })
+                        .show();
+
+            } else {
+                user = sessionManager.getAmountDetails();
+                //percentage
+                double percentage = Double.valueOf(user.get("jpy")) * 0.70;
+                double final_percentage = percentage / 100;
+
+                double usd_bal = Double.valueOf(user.get("jpy").toString()) - Integer.parseInt(get_amount) - final_percentage;
+                double add_euro_Val = Double.valueOf(user.get("euro").toString()) + Double.valueOf(get_amounts);
+
+                sessionManager.createAmountDetails(String.valueOf(add_euro_Val), user.get("usd").toString(), String.valueOf(usd_bal));
+            }
+        } else if (get_fromString.equals("JPY") && get_toString.equals("USD")) {
+            //JPY Value 0
+            if (user.get("jpy").equals("0.0")) {
+                final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Error")
+                        .setMessage("Value is 0")
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface arg0, int arg1) {
+
+                            }
+                        })
+                        .show();
+            }
+            //Greater value
+            else if (Double.valueOf(user.get("jpy")) < Double.valueOf(get_amount)) {
+                final AlertDialog alertbox = new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Error")
+                        .setMessage("Entered values is greater than JPY Value")
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface arg0, int arg1) {
+
+                            }
+                        })
+                        .show();
+
+            } else {
+                user = sessionManager.getAmountDetails();
+                //percentage
+                double percentage = Double.valueOf(user.get("jpy")) * 0.70;
+                double final_percentage = percentage / 100;
+
+                double usd_bal = Double.valueOf(user.get("jpy").toString()) - Integer.parseInt(get_amount) - final_percentage;
+                double add_euro_Val = Double.valueOf(user.get("usd").toString()) + Double.valueOf(get_amounts);
+
+                sessionManager.createAmountDetails(user.get("euro").toString(), String.valueOf(add_euro_Val), String.valueOf(usd_bal));
+            }
+        }
+
+        InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+    }
+
 }
